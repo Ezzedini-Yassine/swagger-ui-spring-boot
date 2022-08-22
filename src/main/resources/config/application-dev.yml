@@ -33,8 +33,8 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/gearni_backend_spring_boot
-    username: gearni_backend_spring_boot
-    password:
+    username: root
+    password: root
     hikari:
       poolName: Hikari
       auto-commit: false
