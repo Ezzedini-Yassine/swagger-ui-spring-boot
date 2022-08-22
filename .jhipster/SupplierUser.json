@@ -1,0 +1,50 @@
+{
+  "applications": "*",
+  "changelogDate": "20220822095909",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "supplier_user",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "The firstname attribute."
+    },
+    {
+      "fieldName": "profilePicture",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isApproved",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "refreshToken",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "refreshTokenExpires",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "role",
+      "fieldType": "Role",
+      "fieldValues": "SUPERADMIN,COMPANYADMIN,BRANCHADMIN,BRANCHUSER"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "SupplierUser",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

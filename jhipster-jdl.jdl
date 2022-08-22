@@ -1,0 +1,17 @@
+entity SupplierUser {
+	/**
+	* The firstname attribute.
+	*/
+	name String,
+	profilePicture String,
+	email String,
+	phoneNumber String,
+	isApproved Boolean,
+	refreshToken Long,
+	refreshTokenExpires Long,
+    role Role
+}
+
+enum Role {
+    SUPERADMIN, COMPANYADMIN, BRANCHADMIN, BRANCHUSER
+}
