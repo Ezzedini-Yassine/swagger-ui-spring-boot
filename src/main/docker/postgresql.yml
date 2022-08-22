@@ -1,15 +1,35 @@
 # This configuration is intended for development purpose, it's **your** responsibility to harden it for production
 version: '3.8'
 services:
-  gearni_backend_spring_boot-postgresql:
+  postgres:
+    container_name: gearni_postgres_container
     image: postgres:14.2
-    # volumes:
-    #   - ~/volumes/jhipster/gearni_backend_spring_boot/postgresql/:/var/lib/postgresql/data/
+    restart: unless-stopped
     environment:
-      - POSTGRES_USER=gearni_backend_spring_boot
-      - POSTGRES_PASSWORD=
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
       - POSTGRES_HOST_AUTH_METHOD=trust
     # If you want to expose these ports outside your dev PC,
     # remove the "127.0.0.1:" prefix
     ports:
-      - 127.0.0.1:5432:5432
+      - '5432:5432'
+    volumes:
+      - postgressss:/var/lib/postgresql/data/
+  pgadmin:
+    depends_on:
+      - postgres
+    container_name: gearni_pgadmin4_container
+    image: dpage/pgadmin4
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - '5050:80'
+    volumes:
+      - type: volume
+        source: pgadmin
+        target: /var/lib/pgadmin
+volumes:
+  pgadmin:
+  postgressss:
